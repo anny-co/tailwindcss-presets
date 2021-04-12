@@ -1,6 +1,6 @@
 {
   "name": "@anny.co/tailwindcss-config",
-  "version": "1.1.0",
+  "version": "1.1.0-compat",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
   "main": "index.js",
   "repository": "git@gitlab.com:anny.co/tailwindcss-config.git",
@@ -12,11 +12,12 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "9",
+    "postcss": "7",
     "tailwindcss": "^2.1.1"
   },
   "peerDependencies": {
-    "tailwindcss": "^2.1.1"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "files": [
     "index.js",
