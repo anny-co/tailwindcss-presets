@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Gilroy"],
+        sans: ["Lato"],
       },
       colors: {
         anny: "#333366",
