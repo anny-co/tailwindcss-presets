@@ -4,7 +4,6 @@ module.exports = {
   purge: [],
   presets: [],
   darkMode: false, // or 'media' or 'class'
-  mode: "jit", // Requires tailwindcss 2.1.x
   purge: {
     enabled: true,
     content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
