@@ -2,7 +2,7 @@
   "name": "tailwindcss-config",
   "version": "1.0.0",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
-  "main": "tailwind.config.js",
+  "main": "index.js",
   "repository": "git@gitlab.com:anny.co/tailwindcss-config.git",
   "author": "Alexander Bartolomey <occloxium@gmail.com>",
   "license": "MIT",
@@ -14,6 +14,7 @@
   "files": [
     "index.js",
     "tailwind.config.js",
-    "postcss.config.js"
+    "postcss.config.js",
+    "index.css"
   ]
 }
