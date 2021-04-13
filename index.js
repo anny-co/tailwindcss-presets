@@ -1,8 +1,8 @@
-const colors = require('tailwindcss/colors');
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: 'media', // or 'media' or 'class'
-  mode: 'jit',
+  darkMode: "media", // or 'media' or 'class'
+  mode: "jit",
   purge: {
     enabled: true,
     content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
@@ -10,7 +10,41 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Lato"],
+        sans: [
+          "Lato",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          '"Noto Sans"',
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+        headline: [
+          "Gilroy",
+          "Lato",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          '"Noto Sans"',
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
       },
       colors: {
         anny: "#333366",
@@ -39,7 +73,5 @@ module.exports = {
       gray: colors.trueGray, // set gray to trueGray palette
     },
   },
-  plugins: [
-    require('./base')
-  ],
+  plugins: [require("./base")],
 };
