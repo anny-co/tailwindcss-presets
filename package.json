@@ -22,7 +22,6 @@
   "files": [
     "index.js",
     "tailwind.config.js",
-    "postcss.config.js",
-    "index.css"
+    "postcss.config.js"
   ]
 }
