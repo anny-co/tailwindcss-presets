@@ -1,5 +1,5 @@
 {
-  "name": "@anny.co/tailwindcss-config",
+  "name": "@anny.co/tailwindcss-presets",
   "version": "1.2.0-compat",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
   "main": "index.js",
@@ -21,7 +21,6 @@
   },
   "files": [
     "index.js",
-    "tailwind.config.js",
-    "postcss.config.js"
+    "base.js"
   ]
 }
