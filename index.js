@@ -1,5 +1,3 @@
-const annyConfig = require("./tailwind.config");
-
 module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   mode: 'jit',
