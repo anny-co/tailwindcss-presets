@@ -1,6 +1,6 @@
 {
   "name": "@anny.co/tailwindcss-presets",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
   "main": "index.js",
   "repository": "git@gitlab.com:anny.co/tailwindcss-config.git",
