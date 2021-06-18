@@ -1,6 +1,6 @@
 {
   "name": "@anny.co/tailwindcss-presets",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
   "main": "index.js",
   "repository": "git@gitlab.com:anny.co/tailwindcss-config.git",
@@ -12,15 +12,15 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "autoprefixer": "9",
-    "postcss": "7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5"
   },
-  "peerDependencies": {
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
-  },
+  "peerDependencies": {},
   "files": [
     "index.js",
     "base.js"
-  ]
+  ],
+  "dependencies": {
+    "tailwindcss": "^2.2.2"
+  }
 }
