@@ -1,6 +1,6 @@
 {
   "name": "@anny.co/tailwindcss-presets",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
   "main": "index.js",
   "repository": "git@gitlab.com:anny.co/tailwindcss-config.git",
@@ -25,7 +25,9 @@
   },
   "files": [
     "index.js",
-    "base.js"
+    "base.js",
+    "theming.js",
+    "fades.js"
   ],
   "dependencies": {
     "tailwindcss": "^2.2.2"
