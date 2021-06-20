@@ -67,5 +67,5 @@ module.exports = {
       gray: colors.trueGray, // set gray to trueGray palette
     },
   },
-  plugins: [require("./base")],
+  plugins: [require("./base"), require("./theming"), require("./fades")],
 };
