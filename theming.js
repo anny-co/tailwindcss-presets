@@ -18,6 +18,9 @@ module.exports = plugin(function ({ addUtilities, variants }) {
     },
     [`.text-theme-${key}`]: {
       color: `var(--${key}, ${defaultValue})`
+    },
+    [`.border-theme-${key}`]: {
+      borderColor: `var(--${key}, ${defaultValue})`
     }
   }, variants("theming")));
 });
