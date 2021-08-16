@@ -27,7 +27,8 @@
     "index.js",
     "base.js",
     "theming.js",
-    "fades.js"
+    "fades.js",
+    "transform.js"
   ],
   "dependencies": {
     "tailwindcss": "^2.2.2"
