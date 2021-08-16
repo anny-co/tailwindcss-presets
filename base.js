@@ -29,6 +29,12 @@ module.exports = plugin(function ({ addBase, addUtilities, addComponents, theme 
     }
   }));
 
+  addUtilities({
+    ".font-gilroy": {
+      fontFamily: "'Gilroy', sans-serif",
+    }
+  });
+
   addComponents({
     ".full-page": {
       display: "flex",
