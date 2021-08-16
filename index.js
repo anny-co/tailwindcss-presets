@@ -1,4 +1,7 @@
 const colors = require("tailwindcss/colors");
+const transform = require("./transform");
+
+const { translate, scale } = transform();
 
 module.exports = {
   theme: {
@@ -40,15 +43,25 @@ module.exports = {
           "'Noto Color Emoji'",
         ],
       },
+      translate,
+      scale,
       colors: {
-        anny: "#333366",
-        "anny-dark": "#131333",
-        primary: "#2b6af8",
-        "primary-muted": "#c0d0f4",
-        secondary: "#ff9814",
-        "secondary-muted": "#ffc478",
-        neutral: "#ffffff",
-        "neutral-muted": "#f3f3f3",
+        "anny": "var(--anny, #333366)",
+        "dark": "var(--dark, #131333)",
+        "primary": "var(--primary, #2b6af8)",
+        "primary-muted": "var(--primary-muted, #c0d0f4)",
+        "secondary": "var(--secondary, #ff9814)",
+        "secondary-muted": "var(--secondary-muted, #ffc478)",
+        "neutral": "var(--neutral-b, #ffffff)",
+        "neutral-muted": "var(--neutral-b, #f3f3f3)",
+        "anny-default": "#333366",
+        "anny-dark-default": "#131333",
+        "primary-default": "#2b6af8",
+        "primary-muted-default": "#c0d0f4",
+        "secondary-default": "#ff9814",
+        "secondary-muted-default": "#ffc478",
+        "neutral-default": "#ffffff",
+        "neutral-muted-default": "#f3f3f3",
       },
     },
     screens: {
@@ -62,10 +75,10 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
 
-      ...colors,
-
+      ...colors, // TODO(fix): this causes warnings due to deprecation of lightBlue
+      lightBlue: undefined,
       gray: colors.trueGray, // set gray to trueGray palette
     },
   },
-  plugins: [require("./base"), require("./theming"), require("./fades")],
+  plugins: [require("./base"), require("./fades")],
 };
