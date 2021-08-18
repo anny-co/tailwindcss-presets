@@ -19,7 +19,7 @@ module.exports = plugin(function ({ addUtilities, variants }) {
       [["bg", "backgroundColor"], ["text", "color"], ["border", "borderColor"]]
         .map(([type, property]) => ({
           [`.${type}-${key}`]: {
-            [`--tw-${type}-opacity`]: 1,
+            [`--tw-${type}-opacity`]: "1",
             [property]: `var(--bg-${key}, rgba(${r}, ${g}, ${b}, var(--tw-${type}-opacity)))`
           }
         }))
