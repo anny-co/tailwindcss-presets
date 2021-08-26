@@ -9,6 +9,10 @@
     "email": "alexander.bartolomey@anny.co",
     "url": "https://anny.co"
   },
+  "bugs": {
+    "url" : "git@github.com:anny-co/tailwindcss-presets.git",
+    "email" : "alexander.bartolomey@anny.co"
+  },
   "license": "MIT",
   "private": false,
   "publishConfig": {
