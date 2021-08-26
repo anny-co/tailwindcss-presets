@@ -20,7 +20,7 @@ module.exports = plugin(function ({ addUtilities, variants }) {
         .map(([type, property]) => ({
           [`.${type}-${key}`]: {
             [`--tw-${type}-opacity`]: "1",
-            [property]: `var(--bg-${key}, rgba(${r}, ${g}, ${b}, var(--tw-${type}-opacity)))`
+            [property]: `var(--${type}-${key}, rgba(${r}, ${g}, ${b}, var(--tw-${type}-opacity)))`
           }
         }))
         .reduce((previous, current) => ({ ...previous, ...current }), {}),
