@@ -1,6 +1,6 @@
 {
   "name": "@anny.co/tailwindcss-presets",
-  "version": "2.4.4",
+  "version": "3.0.0",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
   "main": "index.js",
   "repository": "git@github.com:anny-co/tailwindcss-presets.git",
@@ -23,12 +23,12 @@
     "access": "restricted"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "eslint": "^7.29.0",
-    "postcss": "^8.3.5"
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "postcss": "^8"
   },
   "peerDependencies": {
-    "tailwindcss": "^2.2.2"
+    "tailwindcss": "^3"
   },
   "files": [
     "index.js",
@@ -38,7 +38,7 @@
     "transform.js"
   ],
   "dependencies": {
-    "color": "^4.0.1",
-    "tailwindcss": "^2.2.2"
+    "color": "^4",
+    "tailwindcss": "^3"
   }
 }
