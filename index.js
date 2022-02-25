@@ -32,12 +32,12 @@ const defaultColors = {
 const themeModel = Object.entries(defaultColors)
   .map(([name, tuple]) => ({ name, color: tuple.join(" ") })) // join channel array to CSS-compliant space-separated string
   .map(({ name, color }) => ({ name, color: withOpacityValue(`--${name}`, color) })) // create function closure for opacity levels
-  .reduce((acc, { name, color }) => ({ ...acc, [name]: color }), {}), // zip-up array to object again
+  .reduce((acc, { name, color }) => ({ ...acc, [name]: color }), {}); // zip-up array to object again
 
 const fallbackModel = Object.entries(defaultColors)
   .map(([name, tuple]) => ({ name: `${name}-default`, color: tuple.join(" ") })) // join channel array to CSS-compliant space-separated string
   .map(({ name, color }) => ({ name, color: ({ opacityValue }) => (opacityValue === undefined ? `rgb(${color})` : `rgb(${color} / ${opacityValue})`) })) // create function closure for opacity levels
-  .reduce((acc, { name, color }) => ({ ...acc, [name]: color }), {}) // zip-up array to object again
+  .reduce((acc, { name, color }) => ({ ...acc, [name]: color }), {}); // zip-up array to object again
 
 const { translate, scale } = transform();
 
