@@ -1,57 +1,43 @@
-const {
-  amber,
-  black,
-  blue,
-  blueGray,
-  coolGray,
-  cyan,
-  emerald,
-  fuchsia,
-  gray,
-  green,
-  indigo,
-  lime,
-  orange,
-  pink,
-  purple,
-  red,
-  rose,
-  sky,
-  teal,
-  trueGray,
-  violet,
-  warmGray,
-  white,
-  yellow,
-} = require("tailwindcss/colors"); // TODO(fix): explicitly import all colors except lightBlue to skip deprecation warning from TailwindCSS
+const colors = require('tailwindcss/colors')
 const transform = require("./transform");
 
-const colors = {
-  amber,
-  black,
-  blue,
-  blueGray,
-  coolGray,
-  cyan,
-  emerald,
-  fuchsia,
-  gray,
-  green,
-  indigo,
-  lime,
-  orange,
-  pink,
-  purple,
-  red,
-  rose,
-  sky,
-  teal,
-  trueGray,
-  violet,
-  warmGray,
-  white,
-  yellow,
+/**
+ * Converts a given color variable into a tailwindcss-compliant color with opacity modifier
+ * @param {string} variable CSS variable name that encodes the color compliant to the CSS rgb() function spec, i.e., as space-separated tuple of channels
+ * @param {string} defaultValue 
+ * @returns CSS property value for tailwind color
+ */
+function withOpacityValue(variable, defaultValue) {
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `rgb(var(${variable}))`
+    }
+    return `rgb(var(${variable}, ${defaultValue}) / ${opacityValue})`
+  }
+}
+
+// anny-specific theming defaults
+// resorts to functional patterns to make colors dynamic to opacity modifiers from tailwind
+const defaultColors = {
+  "anny": [51, 51, 102], // "#333366"
+  "dark": [19, 19, 51], // "#131333"
+  "neutral": [255, 255, 255], // "#ffffff"
+  "neutral-muted": [243, 243, 243], // "#f3f3f3"
+  "primary": [43, 106, 248], // "#2b6af8"
+  "primary-muted": [192, 208, 244], // "#c0d0f4"
+  "secondary": [255, 152, 20], // "#ff9814"
+  "secondary-muted": [255, 196, 120] // "#ffc478"
 };
+
+const themeModel = Object.entries(defaultColors)
+  .map(([name, tuple]) => ({ name, color: tuple.join(" ") })) // join channel array to CSS-compliant space-separated string
+  .map(({ name, color }) => ({ name, color: withOpacityValue(`--${name}`, color) })) // create function closure for opacity levels
+  .reduce((acc, { name, color }) => ({ ...acc, [name]: color }), {}), // zip-up array to object again
+
+const fallbackModel = Object.entries(defaultColors)
+  .map(([name, tuple]) => ({ name: `${name}-default`, color: tuple.join(" ") })) // join channel array to CSS-compliant space-separated string
+  .map(({ name, color }) => ({ name, color: ({ opacityValue }) => (opacityValue === undefined ? `rgb(${color})` : `rgb(${color} / ${opacityValue})`) })) // create function closure for opacity levels
+  .reduce((acc, { name, color }) => ({ ...acc, [name]: color }), {}) // zip-up array to object again
 
 const { translate, scale } = transform();
 
@@ -98,14 +84,8 @@ module.exports = {
       translate,
       scale,
       colors: {
-        "anny-default": "var(--anny, #333366)",
-        "dark-default": "var(--dark, #131333)",
-        "neutral-default": "var(--neutral-b, #ffffff)",
-        "neutral-muted-default": "var(--neutral-b, #f3f3f3)",
-        "primary-default": "var(--primary, #2b6af8)",
-        "primary-muted-default": "var(--primary-muted, #c0d0f4)",
-        "secondary-default": "var(--secondary, #ff9814)",
-        "secondary-muted-default": "var(--secondary-muted, #ffc478)",
+        ...themeModel,
+        ...fallbackModel
         // "anny-default": "#333366",
         // "anny-dark-default": "#131333",
         // "neutral-default": "#ffffff",
@@ -126,9 +106,9 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      ...colors,
-      gray: colors.trueGray, // set gray to trueGray palette
+      ...colors, // spread stock tailwind colours
+      gray: colors.neutral, // reset default blue-ish gray to neutral gray
     },
   },
-  plugins: [require("./base"), require("./fades"), require("./theming")],
+  plugins: [require("./base"), require("./fades")],
 };
