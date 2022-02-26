@@ -1,4 +1,3 @@
-const colors = require("tailwindcss/colors");
 const transform = require("./transform");
 const defaultColors = require("./colors");
 

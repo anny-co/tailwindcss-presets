@@ -1,3 +1,4 @@
+const plugin = require("tailwindcss/plugin");
 
 module.exports = plugin(function ({ addUtilities, variants }) {
   Object.entries(themeModel).forEach(([key, defaultValue]) => {
