@@ -90,6 +90,7 @@ module.exports = {
         // "primary-muted-default": "#c0d0f4",
         // "secondary-default": "#ff9814",
         // "secondary-muted-default": "#ffc478",
+        gray: neutral, // reset default blue-ish gray to neutral gray
       },
     },
     screens: {
@@ -98,13 +99,7 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
-    },
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      // ...colors, // spread stock tailwind colours
-      gray: neutral, // reset default blue-ish gray to neutral gray
-    },
+    }
   },
   plugins: [require("./base"), require("./fades"), require('./theming')],
 };
