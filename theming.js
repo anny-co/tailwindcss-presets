@@ -1,7 +1,8 @@
 const plugin = require("tailwindcss/plugin");
+const defaultColors = require("./colors");
 
 module.exports = plugin(function ({ addUtilities, variants }) {
-  Object.entries(themeModel).forEach(([key, defaultValue]) => {
+  Object.entries(defaultColors).forEach(([key, defaultValue]) => {
     const [r, g, b] = color(defaultValue).rgb().array();
     return addUtilities(
       [["bg", "backgroundColor"], ["text", "color"], ["border", "borderColor"]]

@@ -1,6 +1,6 @@
 const transform = require("./transform");
 const defaultColors = require("./colors");
-
+const { neutral } = require("tailwindcss/colors")
 /**
  * Converts a given color variable into a tailwindcss-compliant color with opacity modifier
  * @param {string} variable CSS variable name that encodes the color compliant to the CSS rgb() function spec, i.e., as space-separated tuple of channels
@@ -103,7 +103,7 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       // ...colors, // spread stock tailwind colours
-      gray: colors.neutral, // reset default blue-ish gray to neutral gray
+      gray: neutral, // reset default blue-ish gray to neutral gray
     },
   },
   plugins: [require("./base"), require("./fades"), require('./theming')],
