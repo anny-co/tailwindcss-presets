@@ -1,6 +1,6 @@
 {
   "name": "@anny.co/tailwindcss-presets",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "NodeJS package for bundling and versioning tailwindcss config files.",
   "main": "index.js",
   "repository": "git@github.com:anny-co/tailwindcss-presets.git",
@@ -36,6 +36,8 @@
     "base.js",
     "fades.js",
     "transform.js",
+    "colors.js",
+    "theming.js",
     "tailwindcss-presets.d.ts"
   ],
   "dependencies": {
