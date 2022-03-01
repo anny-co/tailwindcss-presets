@@ -101,5 +101,5 @@ module.exports = {
       "2xl": "1536px",
     }
   },
-  plugins: [require("./base"), require("./fades"), require('./theming')],
+  plugins: [require("./base"), require("./fades"), /* require('./theming') */],
 };
